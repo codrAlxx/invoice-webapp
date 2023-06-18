@@ -5,6 +5,8 @@ import express from "express"
 import morgan from "morgan";
 import connectionToDB from "./config/connectDB.js";
 import {morganMiddleware, systemLogs} from './utils/Logger.js'
+import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
+
 
 const mongoSanitize = require('express-mongo-sanitize');
 
@@ -28,7 +30,8 @@ app.get("/api/v1/test" , (req, res)=> {
     res.json({Hi : "Welcome to my app"})
 })
 
-
+app.use(notFound);
+app.use(errorHandler);
 
 
 app.listen(PORT, () => {
