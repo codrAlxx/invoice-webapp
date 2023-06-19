@@ -4,6 +4,7 @@ import verifyUserEmail from "../controllers/auth/verifyEmailController.js";
 import loginUser from "../controllers/auth/loginController.js";
 import { loginLimiter } from "../middleware/apiLimiter.js";
 import newAccessToken from "../controllers/auth/refreshTokenController.js";
+import resendEmailVerificationToken from "../controllers/auth/resendVerifyEmailController.js";
 
 const router = express.Router();
 
@@ -19,6 +20,7 @@ router.get("/authTest" , (req, res)=> {
     // console.log(req.url)
     res.json({Hi : "Welcome to my auth Test "})
 })
+router.post("/resend_email_token", resendEmailVerificationToken);
 
 
 export default router;
