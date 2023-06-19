@@ -5,10 +5,10 @@ import express from "express"
 import morgan from "morgan";
 import connectionToDB from "./config/connectDB.js";
 import {morganMiddleware, systemLogs} from './utils/Logger.js'
+import mongoSanitize from "express-mongo-sanitize";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
+import authRoutes from "./routes/authRoutes.js";
 
-
-const mongoSanitize = require('express-mongo-sanitize');
 
 
 await connectionToDB();
@@ -22,13 +22,18 @@ if(process.env.NODE_ENV === 'production') {
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use(cookieParser())
-app.use(mongoSanitize)
+app.use(mongoSanitize());
 app.use(morganMiddleware)   
+
+
 
 app.get("/api/v1/test" , (req, res)=> {
     // console.log(req.url)
     res.json({Hi : "Welcome to my app"})
 })
+
+
+app.use("/api/v1/auth", authRoutes)
 
 app.use(notFound);
 app.use(errorHandler);
