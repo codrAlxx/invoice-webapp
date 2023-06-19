@@ -5,6 +5,8 @@ import loginUser from "../controllers/auth/loginController.js";
 import { loginLimiter } from "../middleware/apiLimiter.js";
 import newAccessToken from "../controllers/auth/refreshTokenController.js";
 import resendEmailVerificationToken from "../controllers/auth/resendVerifyEmailController.js";
+import logoutUser from "../controllers/auth/logoutController.js";
+
 
 import {
 	resetPassword,
@@ -26,6 +28,8 @@ router.post("/resend_email_token", resendEmailVerificationToken);
 router.post("/reset_password_request", resetPasswordRequest);
 
 router.post("/reset_password", resetPassword);
+
+router.get("/logout", logoutUser);
 
 router.get("/authTest" , (req, res)=> {
     // console.log(req.url)
