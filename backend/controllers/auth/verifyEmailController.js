@@ -3,7 +3,7 @@ import User from "../../models/userModel.js";
 import VerificationToken from "../../models/verifyResetTokenModel.js";
 import sendEmail from "../../utils/sendEmail.js";
 
-const domainURL = process.env.DOMAIN;
+const domainURL = "http://localhost:8080"
 
 // $-title   Verify User Email
 // $-path    GET /api/v1/auth/verify/:emailToken/:userId
