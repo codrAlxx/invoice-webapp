@@ -6,20 +6,21 @@ const baseQuery = fetchBaseQuery({
 	credentials: "include",
 	prepareHeaders: (headers, { getState }) => {
 		const token = getState().auth.user?.accessToken;
-		// const googleToken = getState().auth.googleToken;
+		console.log("In Base Query")
+		const googleToken = getState().auth.googleToken;
 		if (token) {
 			headers.set("authorization", `Bearer ${token}`);
 		} 
-        // else if (googleToken) {
-		// 	headers.set("authorization", `Bearer ${googleToken}`);
-		// }
+        else if (googleToken) {
+			headers.set("authorization", `Bearer ${googleToken}`);
+		}
 		return headers;
 	},
 });
 
 const baseQueryWithRefreshToken = async (args, api, extraOptions) => {
 	let response = await baseQuery(args, api, extraOptions);
-
+	console.log("In base query Refresh Toekn");
 	if (response?.error?.originalStatus === 403) {
 		const refreshResponse = await baseQuery(
 			"/auth/new_access_token",

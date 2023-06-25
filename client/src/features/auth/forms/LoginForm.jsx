@@ -32,7 +32,7 @@ const LoginForm = () => {
 	const dispatch = useDispatch();
 	const location = useLocation();
 
-	const from = location.state?.from?.pathname || "/dashboard";
+	const from = location.state?.from?.pathname || "/";
 
 	const [showPassword, setShowPassword] = useState(false);
 

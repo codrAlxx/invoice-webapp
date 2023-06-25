@@ -2,6 +2,7 @@ import { baseApiSlice } from "../api/baseApiSlice";
 import { logOut } from "./authSlice";
 
 export const authApiSlice = baseApiSlice.injectEndpoints({
+
 	endpoints: (builder) => ({
 		registerUser: builder.mutation({
 			query: (userData) => ({
