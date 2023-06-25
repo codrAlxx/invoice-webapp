@@ -4,6 +4,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import { useSelector } from "react-redux";
 
 
 
@@ -20,14 +21,17 @@ import HomePage from './pages/HomePage'
 import RegisterPage from './features/auth/pages/RegisterPage';
 import VerifiedPage from "./features/auth/pages/VerifiedPage";
 import LoginPage from "./features/auth/pages/LoginPage";
+import Navbar from "./components/Navbar";
 
 const App = () => {
 	useTitle("MERN Invoice - Home");
+	const { user } = useSelector((state) => state.auth);
 
 	return (
 		<ThemeProvider theme={customTheme}>
 			<CssBaseline />
 			{/* {user && <Navbar />} */}
+			<Navbar />
 			<Routes>
 				<Route path="/" element={<Layout />}>
 					<Route index element={<HomePage />} />
