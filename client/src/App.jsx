@@ -28,12 +28,12 @@ import PasswordResetPage from "./features/auth/pages/PasswordReset";
 const App = () => {
 	useTitle("MERN Invoice - Home");
 	const { user } = useSelector((state) => state.auth);
-
+	console.log(user)
 	return (
 		<ThemeProvider theme={customTheme}>
 			<CssBaseline />
-			{/* {user && <Navbar />} */}
-			<Navbar />
+			{user && <Navbar />}
+			{/* <Navbar /> */}
 			<Routes>
 				<Route path="/" element={<Layout />}>
 					<Route index element={<HomePage />} />
