@@ -24,6 +24,11 @@ import VerifiedPage from "./features/auth/pages/VerifiedPage";
 import LoginPage from "./features/auth/pages/LoginPage";
 import ResendEmailTokenPage from "./features/auth/pages/ResendEmailToken";
 import PasswordResetPage from "./features/auth/pages/PasswordReset";
+import { ROLES } from "./config/roles";
+import UsersList from "./features/users/pages/UsersListPage";
+import DashboardPage from './features/dashboard/DashboardPage';
+import AuthRequired from "./components/AuthRequired";
+
 
 const App = () => {
 	useTitle("MERN Invoice - Home");
@@ -41,12 +46,27 @@ const App = () => {
 					<Route path="register" element={<RegisterPage />} />
 					<Route path="auth/verify" element={<VerifiedPage />} />
 					<Route path="login" element={<LoginPage />} />
-					<Route path="*" element={<NotFound />} />
+
 					<Route path="resend" element={<ResendEmailTokenPage />} />
 					<Route
 						path="reset_password_request"
 						element={<PasswordResetPage />}
 					/>
+
+					<Route
+						element={<AuthRequired allowedRoles={[ROLES.User]} />}
+					>
+						<Route path="dashboard" element={<DashboardPage />} />
+					</Route>
+
+
+					<Route
+						element={<AuthRequired allowedRoles={[ROLES.Admin]} />}
+					>
+						<Route path="users" element={<UsersList />} />
+					</Route>
+
+					<Route path="*" element={<NotFound />} />
 				</Route>
 			</Routes>
       
