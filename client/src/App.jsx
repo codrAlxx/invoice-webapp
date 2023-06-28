@@ -16,7 +16,7 @@ import Footer from './components/Footer'
 import NotFound from "./components/NotFound";
 import Layout from "./components/Layout";
 import Navbar from "./components/Navbar";
-
+import AuthRequired from "./components/AuthRequired";
 
 import HomePage from './pages/HomePage'
 import RegisterPage from './features/auth/pages/RegisterPage';
@@ -27,7 +27,7 @@ import PasswordResetPage from "./features/auth/pages/PasswordReset";
 import { ROLES } from "./config/roles";
 import UsersList from "./features/users/pages/UsersListPage";
 import DashboardPage from './features/dashboard/DashboardPage';
-import AuthRequired from "./components/AuthRequired";
+
 
 
 const App = () => {
@@ -65,7 +65,7 @@ const App = () => {
 					>
 						<Route path="users" element={<UsersList />} />
 					</Route>
-
+					<Route path="users" element={<UsersList />} />
 					<Route path="*" element={<NotFound />} />
 				</Route>
 			</Routes>
