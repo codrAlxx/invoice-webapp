@@ -6,12 +6,13 @@ import { loginLimiter } from "../middleware/apiLimiter.js";
 import newAccessToken from "../controllers/auth/refreshTokenController.js";
 import resendEmailVerificationToken from "../controllers/auth/resendVerifyEmailController.js";
 import logoutUser from "../controllers/auth/logoutController.js";
-
-
+import passport from "passport";
+import googleLogin from "../controllers/auth/googleAuthController.js";
 import {
 	resetPassword,
 	resetPasswordRequest,
 } from "../controllers/auth/passwordResetController.js";
+
 
 const router = express.Router();
 
@@ -31,11 +32,25 @@ router.post("/reset_password", resetPassword);
 
 router.get("/logout", logoutUser);
 
-router.get("/authTest" , (req, res)=> {
-    // console.log(req.url)
-    res.json({Hi : "Welcome to my auth Test "})
-})
+router.get(
+	"/google",
+	passport.authenticate("google", {
+		session: false,
+		scope: ["profile", "email"],
+		accessType: "offline",
+		prompt: "consent",
+	})
+);
 
-
+// $-title   Redirect route to the passport google strategy
+// $-path    GET /api/v1/auth/google/redirect
+router.get(
+	"/google/redirect",
+	passport.authenticate("google", {
+		failureRedirect: "/login",
+		session: false,
+	}),
+    googleLogin
+);
 
 export default router;
