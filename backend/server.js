@@ -1,4 +1,5 @@
 import chalk from "chalk";
+import path from "path";
 import cookieParser from "cookie-parser";
 import "dotenv/config"
 import express from "express"
@@ -14,10 +15,16 @@ import documentRoutes from "./routes/documentRoutes.js";
 import { apiLimiter } from "./middleware/apiLimiter.js";
 import passport from "passport";
 import googleAuth from "./config/passportSetup.js";
+import uploadRoutes from "./routes/uploadRoutes.js";
 
 await connectionToDB();
 const app = express();
 const PORT = process.env.PORT || 1997
+
+const __dirname = path.resolve();
+app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
+app.use("/docs", express.static(path.join(__dirname, "/docs")));
+
 
 if(process.env.NODE_ENV === 'production') {
     app.use(morgan("dev"))
@@ -45,6 +52,7 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/user",	apiLimiter, userRoutes);
 app.use("/api/v1/customer", apiLimiter, customerRoutes);
 app.use("/api/v1/document", apiLimiter, documentRoutes);
+app.use("/api/v1/upload", apiLimiter, uploadRoutes);
 
 
 
