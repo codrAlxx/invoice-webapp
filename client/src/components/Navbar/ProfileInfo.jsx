@@ -82,7 +82,7 @@ const ProfileInfo = ({ user }) => {
 				aria-haspopup="true"
 				onClick={handleOpenUserMenu}
 			>
-				{user?.avatar ? (
+				{user.avatar ? (
 					<Stack
 						direction="row"
 						spacing={2}
@@ -91,10 +91,10 @@ const ProfileInfo = ({ user }) => {
 					>
 						<Avatar
 							alt="profile user"
-							src={user?.avatar}
+							src={user.avatar}
 							sx={{ width: 48, height: 48 }}
 						/>
-						<Typography variant="h6">{user?.username}</Typography>
+						<Typography variant="h6">{user.username}</Typography>
 					</Stack>
 				) : (
 					<Stack
@@ -104,9 +104,9 @@ const ProfileInfo = ({ user }) => {
 						sx={{ p: 0.5 }}
 					>
 						<Avatar sx={{ bgcolor: deepOrange[700] }}>
-							{user?.username.charAt(0).toUpperCase()}
+							{user.username.charAt(0).toUpperCase()}
 						</Avatar>
-						<Typography variant="h6">{user?.username}</Typography>
+						<Typography variant="h6">{user.username}</Typography>
 					</Stack>
 				)}
 			</ButtonBase>
@@ -176,7 +176,7 @@ const ProfileInfo = ({ user }) => {
 										spacing={1.25}
 										alignItems="center"
 									>
-										{user?.avatar ? (
+										{user.avatar ? (
 											<Stack
 												direction="row"
 												spacing={1.25}
@@ -185,7 +185,7 @@ const ProfileInfo = ({ user }) => {
 											>
 												<Avatar
 													alt="profile user"
-													src={user?.avatar}
+													src={user.avatar}
 													sx={{
 														width: 48,
 														height: 48,
@@ -193,8 +193,8 @@ const ProfileInfo = ({ user }) => {
 												/>
 												<Stack>
 													<Typography variant="h6">
-														{user?.firstName}{" "}
-														{user?.lastName}
+														{user.firstName}{" "}
+														{user.lastName}
 													</Typography>
 													<Typography variant="body2">
 														{isAdmin
@@ -216,14 +216,14 @@ const ProfileInfo = ({ user }) => {
 															deepOrange[700],
 													}}
 												>
-													{user?.username
+													{user.username
 														.charAt(0)
 														.toUpperCase()}
 												</Avatar>
 												<Stack>
 													<Typography variant="h6">
-														{user?.firstName}{" "}
-														{user?.lastName}
+														{user.firstName}{" "}
+														{user.lastName}
 													</Typography>
 													<Typography
 														variant="body2"

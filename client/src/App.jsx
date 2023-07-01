@@ -5,7 +5,8 @@ import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import { useSelector } from "react-redux";
-
+import EditProfileForm from "./features/users/pages/EditProfileForm";
+import ProfilePage from "./features/users/pages/ProfilePage";
 
 
 
@@ -57,6 +58,11 @@ const App = () => {
 						element={<AuthRequired allowedRoles={[ROLES.User]} />}
 					>
 						<Route path="dashboard" element={<DashboardPage />} />
+						<Route path="profile" element={<ProfilePage />} />
+						<Route
+							path="edit-profile"
+							element={<EditProfileForm />}
+						/>
 					</Route>
 
 
