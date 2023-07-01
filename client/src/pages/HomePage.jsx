@@ -21,7 +21,7 @@ const CreateAccountButton = styled(Button)({
 });
 
 const HomePage = () => {
-	console.log("Inside Home Page");
+	// console.log("Inside Home Page");
 	const navigate = useNavigate();
 	return (
 		<>

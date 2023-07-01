@@ -34,7 +34,7 @@ import DashboardPage from './features/dashboard/DashboardPage';
 const App = () => {
 	useTitle("MERN Invoice - Home");
 	const { user } = useSelector((state) => state.auth);
-	console.log(user)
+	// console.log(user)
 	return (
 		<ThemeProvider theme={customTheme}>
 			<CssBaseline />

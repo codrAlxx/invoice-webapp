@@ -13,7 +13,7 @@ const { randomBytes } = await import("crypto");
 
 const registerUser = asyncHandler(async (req, res) => {
 
-	console.log("In register User function")
+	// console.log("In register User function")
 
 	const { email, username, firstName, lastName, password, passwordConfirm } =
 		req.body;

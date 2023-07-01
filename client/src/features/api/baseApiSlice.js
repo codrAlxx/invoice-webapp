@@ -6,7 +6,7 @@ const baseQuery = fetchBaseQuery({
 	credentials: "include",
 	prepareHeaders: (headers, { getState }) => {
 		const token = getState().auth.user?.accessToken;
-		console.log("In Base Query")
+		// console.log("In Base Query")
 		const googleToken = getState().auth.googleToken;
 		if (token) {
 			headers.set("authorization", `Bearer ${token}`);
@@ -20,7 +20,7 @@ const baseQuery = fetchBaseQuery({
 
 const baseQueryWithRefreshToken = async (args, api, extraOptions) => {
 	let response = await baseQuery(args, api, extraOptions);
-	console.log("In base query Refresh Toekn");
+	// console.log("In base query Refresh Toekn");
 	if (response?.error?.originalStatus === 403) {
 		const refreshResponse = await baseQuery(
 			"/auth/new_access_token",

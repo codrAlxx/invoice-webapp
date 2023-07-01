@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 
 const AuthWrapper = ({ children }) => {
-	console.log("Inside Auth wrapper");
+	// console.log("Inside Auth wrapper");
 	return (
 		<Box
 			sx={{
