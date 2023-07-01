@@ -7,13 +7,17 @@ import User from "../../models/userModel.js";
 // an admin user can delete any other user account
 const deleteUserAccount = asyncHandler(async (req, res) => {
 	const user = await User.findById(req.params.id);
-
+	const userId = req.params.id;
+	// console.log(userId)
+	// console.log("Dete User Account hitted")
 	if (user) {
-		const result = await user.remove();
+		
+		// const result = await user.remove();
+		await User.findByIdAndDelete(userId);
 
 		res.json({
 			success: true,
-			message: `User ${result.firstName} deleted successfully`,
+			message: `User ${userId} deleted successfully`,
 		});
 	} else {
 		res.status(404);
