@@ -28,7 +28,10 @@ import PasswordResetPage from "./features/auth/pages/PasswordReset";
 import { ROLES } from "./config/roles";
 import UsersList from "./features/users/pages/UsersListPage";
 import DashboardPage from './features/dashboard/DashboardPage';
-
+import CustomerCreateForm from "./features/customers/pages/CustomerCreateForm";
+import CustomerEditForm from "./features/customers/pages/CustomerEditForm";
+import CustomersPage from "./features/customers/pages/CustomersPage";
+import SingleCustomerPage from "./features/customers/pages/SingleCustomerPage";
 
 
 const App = () => {
@@ -62,6 +65,19 @@ const App = () => {
 						<Route
 							path="edit-profile"
 							element={<EditProfileForm />}
+						/>
+						<Route path="customers" element={<CustomersPage />} />
+						<Route
+							path="create-customer"
+							element={<CustomerCreateForm />}
+						/>
+						<Route
+							path="single-customer/:custId"
+							element={<SingleCustomerPage />}
+						/>
+						<Route
+							path="edit-customer/:custId"
+							element={<CustomerEditForm />}
 						/>
 					</Route>
 
