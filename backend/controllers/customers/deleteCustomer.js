@@ -7,7 +7,8 @@ import Customer from "../../models/customerModel.js";
 
 const deleteCustomer = asyncHandler(async (req, res) => {
 	const customer = await Customer.findById(req.params.id);
-
+	const custId = req.params.id;
+	// console.log("In delete Customer");
 	if (!customer) {
 		res.status(404);
 		throw new Error("That customer does not exist!");
@@ -20,7 +21,8 @@ const deleteCustomer = asyncHandler(async (req, res) => {
 		);
 	}
 
-	await customer.delete();
+	await Customer.findByIdAndDelete(custId);
+	// await customer.delete();
 
 	res.json({ success: true, message: "Your customer has been deleted" });
 });
