@@ -18,6 +18,7 @@ import NotFound from "./components/NotFound";
 import Layout from "./components/Layout";
 import Navbar from "./components/Navbar";
 import AuthRequired from "./components/AuthRequired";
+import IsLoggedIn from './components/IsLoggedIn';
 
 import HomePage from './pages/HomePage'
 import RegisterPage from './features/auth/pages/RegisterPage';
@@ -32,6 +33,8 @@ import CustomerCreateForm from "./features/customers/pages/CustomerCreateForm";
 import CustomerEditForm from "./features/customers/pages/CustomerEditForm";
 import CustomersPage from "./features/customers/pages/CustomersPage";
 import SingleCustomerPage from "./features/customers/pages/SingleCustomerPage";
+import {Outlet, Navigate} from 'react-router-dom'
+
 
 
 const App = () => {
@@ -47,15 +50,27 @@ const App = () => {
 				<Route path="/" element={<Layout />}>
 					<Route index element={<HomePage />} />
 
+					{/* <Route path="register" element={<RegisterPage />} />
+					<Route path="auth/verify" element={<VerifiedPage />} />
+					<Route path="login" element={<LoginPage />} />
+					<Route path="resend" element={<ResendEmailTokenPage />} />
+					<Route
+						path="reset_password_request"
+						element={<PasswordResetPage />}
+					/> */}
+
+				<Route element={<IsLoggedIn />}>
 					<Route path="register" element={<RegisterPage />} />
 					<Route path="auth/verify" element={<VerifiedPage />} />
 					<Route path="login" element={<LoginPage />} />
-
 					<Route path="resend" element={<ResendEmailTokenPage />} />
 					<Route
 						path="reset_password_request"
 						element={<PasswordResetPage />}
 					/>
+    			</Route>
+
+
 
 					<Route
 						element={<AuthRequired allowedRoles={[ROLES.User]} />}

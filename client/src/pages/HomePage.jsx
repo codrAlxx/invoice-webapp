@@ -20,9 +20,60 @@ const CreateAccountButton = styled(Button)({
 	},
 });
 
+function  LoginButton({isLoggedIn}) {
+	console.log(isLoggedIn)
+	const navigate = useNavigate();
+	if(isLoggedIn){
+
+	return	<CreateAccountButton
+		variant="contained"
+		color="success"
+		size="large"
+		sx={{ fontSize: "1.5em", borderRadius: "25px" }}
+		onClick={() => navigate("/dashboard")}
+	>
+		<Link
+			component={RouterLink}
+			to="/dashboard"
+			sx={{
+				textDecoration: "none",
+				color: "white",
+				fontSize: "2rem",
+			}}
+		>
+			Dashboard
+		</Link>
+	</CreateAccountButton>
+	}
+			
+	return	<CreateAccountButton
+		variant="contained"
+		color="success"
+		size="large"
+		sx={{ fontSize: "1.5em", borderRadius: "25px" }}
+		onClick={() => navigate("/register")}
+	>
+		<Link
+			component={RouterLink}
+			to="/register"
+			sx={{
+				textDecoration: "none",
+				color: "white",
+				fontSize: "2rem",
+			}}
+		>
+			Create Account
+		</Link>
+	</CreateAccountButton>
+}
+
 const HomePage = () => {
 	// console.log("Inside Home Page");
+	
+	const item = JSON.parse(localStorage.getItem('user'));
+	const token = item?.accessToken!=undefined;
 	const navigate = useNavigate();
+
 	return (
 		<>
 			<header className="masthead main-bg-image">
@@ -57,7 +108,7 @@ const HomePage = () => {
 								mt: 5,
 							}}
 						>
-							<CreateAccountButton
+							{/* <CreateAccountButton
 								variant="contained"
 								color="success"
 								size="large"
@@ -75,7 +126,9 @@ const HomePage = () => {
 								>
 									Create Account
 								</Link>
-							</CreateAccountButton>
+							</CreateAccountButton> */}
+							<LoginButton isLoggedIn={token}/>
+							
 						</Box>
 					</Grid>
 				</Grid>
