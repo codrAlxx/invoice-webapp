@@ -71,7 +71,7 @@ const HomePage = () => {
 	// console.log("Inside Home Page");
 	
 	const item = JSON.parse(localStorage.getItem('user'));
-	const token = item?.accessToken!=undefined;
+	const token = item?.accessToken!==undefined;
 	const navigate = useNavigate();
 
 	return (
