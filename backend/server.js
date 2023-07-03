@@ -16,7 +16,6 @@ import { apiLimiter } from "./middleware/apiLimiter.js";
 import passport from "passport";
 import googleAuth from "./config/passportSetup.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
-import documentRoutes from "./routes/documentRoutes.js";
 
 await connectionToDB();
 const app = express();
@@ -54,7 +53,6 @@ app.use("/api/v1/user",	apiLimiter, userRoutes);
 app.use("/api/v1/customer", apiLimiter, customerRoutes);
 app.use("/api/v1/document", apiLimiter, documentRoutes);
 app.use("/api/v1/upload", apiLimiter, uploadRoutes);
-app.use("/api/v1/document", apiLimiter, documentRoutes);
 
 
 app.use(notFound);
