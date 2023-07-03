@@ -61,7 +61,7 @@ const NotFound = () => {
 							>
 								<Link
 									component={RouterLink}
-									to="/"
+									to="/dashboard"
 									sx={{
 										textDecoration: "none",
 										color: "white",
