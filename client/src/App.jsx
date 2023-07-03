@@ -33,6 +33,7 @@ import CustomerCreateForm from "./features/customers/pages/CustomerCreateForm";
 import CustomerEditForm from "./features/customers/pages/CustomerEditForm";
 import CustomersPage from "./features/customers/pages/CustomersPage";
 import SingleCustomerPage from "./features/customers/pages/SingleCustomerPage";
+import DocumentsPage from "./features/documents/pages/DocumentsPage";
 import {Outlet, Navigate} from 'react-router-dom'
 
 
@@ -94,6 +95,8 @@ const App = () => {
 							path="edit-customer/:custId"
 							element={<CustomerEditForm />}
 						/>
+						<Route path="documents" element={<DocumentsPage />} />
+
 					</Route>
 
 
