@@ -7,7 +7,7 @@ import Document from "../../models/documentModel.js";
 
 const deleteDocument = asyncHandler(async (req, res) => {
 	const document = await Document.findById(req.params.id);
-
+	const docId = req.params.id;
 	if (!document) {
 		res.status(404);
 		throw new Error("That document does not exist!");
@@ -20,7 +20,7 @@ const deleteDocument = asyncHandler(async (req, res) => {
 		);
 	}
 
-	await document.delete();
+	await Document.findByIdAndDelete(docId);
 
 	res.json({ success: true, message: "Your document has been deleted" });
 });
