@@ -89,7 +89,7 @@ const DocCreateEditForm = () => {
 		today.getTime() + 7 * 24 * 60 * 60 * 1000
 	);
 
-	const [customer, setCustomer] = useState(null);
+	const [customer, setCustomer] = useState();
 	const [salesTax, setSalesTax] = useState(0);
 	const [total, setTotal] = useState(0);
 	const [subTotal, setSubTotal] = useState(0);
@@ -195,24 +195,30 @@ const DocCreateEditForm = () => {
 				toast.error(message);
 			}
 		} else {
-			try {
-				await createDoc({
-					...docData,
-					billingItems: [...items],
-					documentType,
-					customer,
-					dueDate,
-					salesTax,
-					subTotal,
-					total,
-					rates,
-					currency,
-					status,
-					paymentRecords: [],
-				});
-			} catch (err) {
-				const message = err.data.message;
+			if(customer===undefined || customer===null){
+				const message = "Please Select a customer";
 				toast.error(message);
+			}else{
+				try {
+					await createDoc({
+						...docData,
+						billingItems: [...items],
+						documentType,
+						customer,
+						dueDate,
+						salesTax,
+						subTotal,
+						total,
+						rates,
+						currency,
+						status,
+						paymentRecords: [],
+					});
+				} catch (err) {
+					const message = err.data.message;
+					toast.error(message);
+				}
+
 			}
 		}
 	};
