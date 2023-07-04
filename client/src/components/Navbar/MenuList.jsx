@@ -35,20 +35,6 @@ const MenuList = () => {
 
 	return (
 		<Box>
-			<StyledList>
-				<ListItem disablePadding>
-					<ListItemButton onClick={() => navigate("/profile")}>
-						<ListItemIcon>
-							<ManageAccountsIcon
-								sx={{ fontSize: 40 }}
-								color="green"
-							/>
-						</ListItemIcon>
-						<ListItemText primary="Manage Profile" />
-					</ListItemButton>
-				</ListItem>
-			</StyledList>
-			<StyledSideMenuDivider />
 
 			<StyledList>
 				<ListItem disablePadding>
@@ -90,6 +76,21 @@ const MenuList = () => {
 							/>
 						</ListItemIcon>
 						<ListItemText primary="Customers" />
+					</ListItemButton>
+				</ListItem>
+			</StyledList>
+			<StyledSideMenuDivider />
+
+			<StyledList>
+				<ListItem disablePadding>
+					<ListItemButton onClick={() => navigate("/profile")}>
+						<ListItemIcon>
+							<ManageAccountsIcon
+								sx={{ fontSize: 40 }}
+								color="green"
+							/>
+						</ListItemIcon>
+						<ListItemText primary="Manage Profile" />
 					</ListItemButton>
 				</ListItem>
 			</StyledList>

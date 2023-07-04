@@ -89,12 +89,13 @@ const ProfileInfo = ({ user }) => {
 						alignItems="center"
 						sx={{ p: 0.5 }}
 					>
+	
+						<Typography variant="h6">{user.username}</Typography>
 						<Avatar
 							alt="profile user"
 							src={user.avatar}
 							sx={{ width: 48, height: 48 }}
 						/>
-						<Typography variant="h6">{user.username}</Typography>
 					</Stack>
 				) : (
 					<Stack

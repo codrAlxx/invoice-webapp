@@ -1,14 +1,15 @@
-import { Divider, styled } from "@mui/material";
+import { Box, styled } from "@mui/material";
 
-const DividerStyle = styled(Divider)({
-	height: "3px",
-	backgroundColor: "rgb(17,65,141)",
-	marginBottom: "20px",
-	marginTop: "25px",
+const StyledBox = styled(Box)({
+	width: "100%",
+	margin: "20px auto 100px auto",
+	borderRadius: "10px",
+	padding: "20px",
+	boxShadow: "0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.6)",
 });
 
-const NormalDivider = () => {
-	return <DividerStyle />;
+const StyledContainer = ({ children }) => {
+	return <StyledBox>{children}</StyledBox>;
 };
 
-export default NormalDivider;
+export default StyledContainer;

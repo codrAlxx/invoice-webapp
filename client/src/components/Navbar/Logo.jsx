@@ -1,4 +1,5 @@
 import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import { Link, Stack, Typography } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 
@@ -6,7 +7,7 @@ const Logo = () => {
 	return (
 		<Stack direction="row" spacing={1} alignItems="center">
 			<Link component={RouterLink} to="/" sx={{ textDecoration: "none" }}>
-				<CurrencyExchangeIcon
+				<CurrencyRupeeIcon
 					sx={{
 						display: { xs: "none", md: "flex" },
 						mr: 1,
@@ -17,11 +18,14 @@ const Logo = () => {
 				/>
 			</Link>
 			<Typography
-				variant="h5"
+				variant="poster"
 				component="div"
 				sx={{
 					flexGrow: 1,
 					cursor: "pointer",
+					fontSize: "32px",
+					variant: "poster",
+					fontWeight: 500,
 					display: { xs: "none", md: "flex" },
 				}}
 			>
