@@ -28,7 +28,6 @@ import ResendEmailTokenPage from "./features/auth/pages/ResendEmailToken";
 import PasswordResetPage from "./features/auth/pages/PasswordReset";
 import { ROLES } from "./config/roles";
 import UsersList from "./features/users/pages/UsersListPage";
-import DashboardPage from './features/dashboard/DashboardPage';
 import CustomerCreateForm from "./features/customers/pages/CustomerCreateForm";
 import CustomerEditForm from "./features/customers/pages/CustomerEditForm";
 import CustomersPage from "./features/customers/pages/CustomersPage";
@@ -36,6 +35,7 @@ import SingleCustomerPage from "./features/customers/pages/SingleCustomerPage";
 import DocCreateEditForm from "./features/documents/pages/DocCreateEditForm";
 import DocumentsPage from "./features/documents/pages/DocumentsPage";
 import SingleDocumentPage from "./features/documents/pages/SingleDocumentPage";
+import DashboardPage from './features/dashboard/DashboardPage';
 import {Outlet, Navigate} from 'react-router-dom'
 
 
@@ -114,6 +114,8 @@ const App = () => {
 							path="document/:id"
 							element={<SingleDocumentPage />}
 						/>
+						<Route path="dashboard" element={<DashboardPage />} />
+
 					</Route>
 
 
