@@ -21,7 +21,7 @@ const CreateAccountButton = styled(Button)({
 });
 
 function  LoginButton({isLoggedIn}) {
-	console.log(isLoggedIn)
+	// console.log(isLoggedIn)
 	const navigate = useNavigate();
 	if(isLoggedIn){
 
