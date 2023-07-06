@@ -36,6 +36,7 @@ import DocCreateEditForm from "./features/documents/pages/DocCreateEditForm";
 import DocumentsPage from "./features/documents/pages/DocumentsPage";
 import SingleDocumentPage from "./features/documents/pages/SingleDocumentPage";
 import DashboardPage from './features/dashboard/DashboardPage';
+import PasswordResetRequestPage from './features/auth/pages/PasswordResetRequestPage';
 import {Outlet, Navigate} from 'react-router-dom'
 
 
@@ -69,6 +70,10 @@ const App = () => {
 					<Route path="resend" element={<ResendEmailTokenPage />} />
 					<Route
 						path="reset_password_request"
+						element={<PasswordResetRequestPage />}
+					/>
+					<Route
+						path="auth/reset_password"
 						element={<PasswordResetPage />}
 					/>
     			</Route>
