@@ -5,21 +5,28 @@ import mg from "nodemailer-mailgun-transport";
 let transporter;
 
 if (process.env.NODE_ENV === "development") {
+
+	// transporter = nodemailer.createTransport({
+	// 	host: "mailhog",
+	// 	port: 1025,
+	// });
 	transporter = nodemailer.createTransport({
-		host: "mailhog",
-		port: 1025,
+		host: 'smtp.ethereal.email',
+		port: 587,
+		auth: {
+			user: 'noble3@ethereal.email',
+			pass: 'KUqFzQzZwfqGMEyZHq'
+		}
 	});
 	// transporter = nodemailer.createTransport({
-	// 	service: 'gmail',
+	// 	host: process.env.ETHEREAL_HOST,
+	// 	port: 587,
 	// 	auth: {
-	// 	  type: 'OAuth2',
-	// 	  user: process.env.MAIL_USERNAME,
-	// 	  pass: process.env.MAIL_PASSWORD,
-	// 	  clientId: process.env.OAUTH_CLIENTID,
-	// 	  clientSecret: process.env.OAUTH_CLIENT_SECRET,
-	// 	  refreshToken: process.env.OAUTH_REFRESH_TOKEN
+	// 		user: process.env.ETHEREAL_USER,
+	// 		pass: process.env.ETHEREAL_KEY
 	// 	}
-	//   });
+	// });
+
 } else if (process.env.NODE_ENV === "production") {
 	const mailgunAuth = {
 		auth: {
