@@ -6,18 +6,11 @@ let transporter;
 
 if (process.env.NODE_ENV === "development") {
 
-	// transporter = nodemailer.createTransport({
-	// 	host: "mailhog",
-	// 	port: 1025,
-	// });
 	transporter = nodemailer.createTransport({
-		host: 'smtp.ethereal.email',
-		port: 587,
-		auth: {
-			user: 'noble3@ethereal.email',
-			pass: 'KUqFzQzZwfqGMEyZHq'
-		}
+		host: "mailhog",
+		port: 1025,
 	});
+
 	// transporter = nodemailer.createTransport({
 	// 	host: process.env.ETHEREAL_HOST,
 	// 	port: 587,
@@ -28,13 +21,21 @@ if (process.env.NODE_ENV === "development") {
 	// });
 
 } else if (process.env.NODE_ENV === "production") {
-	const mailgunAuth = {
+	// const mailgunAuth = {
+	// 	auth: {
+	// 		api_key: process.env.MAILGUN_API_KEY,
+	// 		domain: process.env.MAILGUN_DOMAIN,
+	// 	},
+	// };
+	// transporter = nodemailer.createTransport(mg(mailgunAuth));
+	transporter = nodemailer.createTransport({
+		host: 'smtp.ethereal.email',
+		port: 587,
 		auth: {
-			api_key: process.env.MAILGUN_API_KEY,
-			domain: process.env.MAILGUN_DOMAIN,
-		},
-	};
-	transporter = nodemailer.createTransport(mg(mailgunAuth));
+			user: 'noble3@ethereal.email',
+			pass: 'KUqFzQzZwfqGMEyZHq'
+		}
+	});
 }
 
 export default transporter;
