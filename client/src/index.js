@@ -6,17 +6,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import { disableReactDevTools } from "@fvilers/disable-react-devtools";
-
-if (process.env.NODE_ENV === "production") {
-	disableReactDevTools();
-}
-
-
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
+
+if (process.env.NODE_ENV === "production") {
+	disableReactDevTools();
+}
 
 const container = document.getElementById('root');
 const root = createRoot(container);

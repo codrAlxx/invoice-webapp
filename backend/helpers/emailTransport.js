@@ -21,20 +21,31 @@ if (process.env.NODE_ENV === "development") {
 	// });
 
 } else if (process.env.NODE_ENV === "production") {
-	const mailgunAuth = {
+	// const mailgunAuth = {
+	// 	auth: {
+	// 		api_key: process.env.MAILGUN_API_KEY,
+	// 		domain: process.env.MAILGUN_DOMAIN,
+	// 	},
+	// };
+	// transporter = nodemailer.createTransport(mg(mailgunAuth));
+
+	transporter =  nodemailer.createTransport({
+		host: 'smtp-relay.brevo.com',
+		port: '587',
 		auth: {
-			api_key: process.env.MAILGUN_API_KEY,
-			domain: process.env.MAILGUN_DOMAIN,
+			user: 'alok08jha@gmail.com',
+			pass: process.env.SIB_API_KEY
 		},
-	};
-	transporter = nodemailer.createTransport({
-		host: process.env.ETHEREAL_HOST,
-		port: 587,
-		auth: {
-			user: process.env.ETHEREAL_USER,
-			pass: process.env.ETHEREAL_KEY
-		}
-	});
+	})
+
+	// transporter = nodemailer.createTransport({
+	// 	host: process.env.ETHEREAL_HOST,
+	// 	port: 587,
+	// 	auth: {
+	// 		user: process.env.ETHEREAL_USER,
+	// 		pass: process.env.ETHEREAL_KEY
+	// 	}
+	// });
 }
 
 export default transporter;
