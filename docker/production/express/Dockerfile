@@ -2,9 +2,6 @@ ARG NODE_VERSION=20-alpine3.17
 
 FROM node:${NODE_VERSION}
 
-LABEL app.invoice.name="invoice-app"
-LABEL app.invoice.license="MIT"
-
 ENV NODE_ENV=production
 
 ARG APP_HOME=/app
