@@ -2,10 +2,11 @@ ARG NODE_VERSION=16-alpine3.12
 
 FROM node:${NODE_VERSION}
 
-LABEL mern.invoice.name="mern-invoice"
-LABEL mern.invoice.license="MIT"
+LABEL name="mern-invoice"
+LABEL license="MIT"
+LABEL description="MERN invoice image"
 
-ENV NODE_ENV=production
+ENV NODE_ENV=development
 
 ARG APP_HOME=/app
 
@@ -37,4 +38,4 @@ RUN chown invoice:invoice ${APP_HOME}
 
 USER invoice
 
-CMD [ "npm","run","start" ]
+CMD [ "npm","run","dev" ]
