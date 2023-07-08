@@ -29,6 +29,7 @@ if (process.env.NODE_ENV === "development") {
 	// };
 	// transporter = nodemailer.createTransport(mg(mailgunAuth));
 
+	
 	transporter =  nodemailer.createTransport({
 		host: 'smtp-relay.brevo.com',
 		port: '587',
