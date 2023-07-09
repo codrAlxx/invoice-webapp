@@ -39,7 +39,9 @@ export const getPDF = (req, res) => {
 
 export const sendDocument = (req, res) => {
 	const { profile, document } = req.body;
-
+	console.log("send Document is hit");
+	console.log(document.customer.email);
+	
 	pdf.create(pdfTemplate(req.body), options).toFile(filepath, (err) => {
 		transporter.sendMail({
 			from: process.env.SENDER_EMAIL,
