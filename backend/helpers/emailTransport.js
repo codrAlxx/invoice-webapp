@@ -34,7 +34,7 @@ if (process.env.NODE_ENV === "development") {
 		host: 'smtp-relay.brevo.com',
 		port: '587',
 		auth: {
-			user: 'alok08jha@gmail.com',
+			user: 'codealxx@gmail.com',
 			pass: process.env.SIB_API_KEY
 		},
 	})
