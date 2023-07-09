@@ -11,7 +11,6 @@ const { randomBytes } = await import("crypto");
 
 const resetPasswordRequest = asyncHandler(async (req, res) => {
 	const { email } = req.body;
-
 	if (!email) {
 		res.status(400);
 		throw new Error("You must enter your email address");
@@ -25,7 +24,11 @@ const resetPasswordRequest = asyncHandler(async (req, res) => {
 		res.status(400);
 		throw new Error("That email is not associated with any account");
 	}
-
+	if(existingUser.isEmailVerified == false){
+		res.status(400);
+		throw new Error("Please Verify Your Email First");
+	}
+	
 	let verificationToken = await VerificationToken.findOne({
 		_userId: existingUser._id,
 	});
@@ -49,7 +52,6 @@ const resetPasswordRequest = asyncHandler(async (req, res) => {
 			name: existingUser.firstName,
 			link: emailLink,
 		};
-
 		await sendEmail(
 			existingUser.email,
 			"Password Reset Request",
