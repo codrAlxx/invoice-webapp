@@ -117,11 +117,16 @@ To get your Cloudinary and cloud name `CLOUDINARY_CLOUD_NAME` and credentials fo
 #### Mailhog
 To Test emails in a local development environment i have utilized mailhog. To see all the mails go to port 8025 on localhost.
 
-### Running Locally
+### DOCKER
+Using docker is simple. Just use the following MAKE commands.
 After setting up all your envoirnment variables and credentials. To spin up all the containers you can use the make commands or manually type your command in the terminal. The following commands have been added.
 
-_Horizontal line :_
+
 - - - -
+_To Build all the containers and remove containers which were created in a previous run :_
+```javascript
+   MAKE BUILD
+```
 
 
 
