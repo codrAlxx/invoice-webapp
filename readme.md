@@ -10,7 +10,6 @@ estimates, quotations and bills via email
       - [Server](#server)
       - [Database](#database)
   * [Configuration and Setup](#configuration-and-setup)
-  * [Troubleshooting](#troubleshooting)
   * [Author](#author)
 
 ![Invoice Dashboard](https://res.cloudinary.com/dsw2tkyc8/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1689109253/Invoice_it3kdd.jpg?_s=public-apps)
@@ -27,7 +26,7 @@ This is a side project I've been working on. A full stack invoicing application 
 - Multiple user registration alongside Modern Redux with ReduxToolkit and ReduxToolkit Query
 - Payment history section for each invoice with record about payment date, payment method and extra note.
  - Clean admin dashboard for displaying all invoice statistics including total amount received, total pending, recent payments, total invoice paid, total unpaid and partially paid invoices. 
-- Custom Logging in NodeJS with Morgan and Winston and setup and use Cloudinary for Image upload
+- Custom Logging in NodeJS with Morgan & Winston and utilized Cloudinary for Image upload
 - Setup NGINX proxy manager and used Portainer to manage containers in a production environment within a Docker Container
 - Served a MERN web app securely using HTTPS and SSL on DigitalOcean Servelet
   
@@ -156,11 +155,6 @@ And then
 
 docker-compose -f docker-compose.prod.yml up
 ```
-
-## Comment
-I intend to keep adding more features to this application, so if you like it, please give it a star, that will encourage me to 
-to keep improving the project.
-
 
 ## Author
 
