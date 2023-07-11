@@ -9,8 +9,8 @@ estimates, quotations and bills via email
       - [Client](#client)
       - [Server](#server)
       - [Database](#database)
-  * [Troubleshooting](#troubleshooting)
   * [Configuration and Setup](#configuration-and-setup)
+  * [Troubleshooting](#troubleshooting)
   * [Author](#author)
 
 ![Invoice Dashboard](https://res.cloudinary.com/dsw2tkyc8/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1689109253/Invoice_it3kdd.jpg?_s=public-apps)
@@ -106,7 +106,7 @@ To get your Google ClientID for authentication, go to the [credential Page ](htt
 - Copy the Client ID and assign it to the variable `GOOGLE_CLIENT_ID` and client secret `GOOGLE_CLIENT_SECRET` in your .env file
 
 #### MongoDB
-We are going to be using Mongo Express in production. is an interactive lightweight Web-Based Administrative Tool to effectively manage MongoDB Databases.
+I am are using Mongo Express in production. is an interactive lightweight Web-Based Administrative Tool to effectively manage MongoDB Databases.
 - The databse is running on port `8081`.
 - We need to Provide credentials for the root user `MONGO_ROOT_USERNAME` and `MONGO_ROOT_PASSWORD` in .env file which will be used as `ME_CONFIG_MONGODB_ADMINUSERNAME` and  `ME_CONFIG_MONGODB_ADMINPASSWORD` yml file.
 - For logging in as user the default Username `ME_CONFIG_BASICAUTH_USERNAME` is `admin` and password `ME_CONFIG_BASICAUTH_PASSWORD` is `admin123456`.
@@ -117,6 +117,8 @@ To get your Cloudinary and cloud name `CLOUDINARY_CLOUD_NAME` and credentials fo
 
 #### Mailhog
 To Test emails in a local development environment i have utilized mailhog. To see all the mails go to port 8025 on localhost.
+
+### NGINX REVERSE PROXY
 
 ### DOCKER
 Using docker is simple. Just use the following MAKE commands.
@@ -169,99 +171,25 @@ _To echo the current user:_
 
 
 ## Production Setup
-In order to run this project locally, simply fork and clone the repository or download as zip and unzip on your machine. 
-- Open the project in your prefered code editor.
-- Go to terminal -> New terminal (If you are using VS code)
-- Split your terminal into two (run the client on one terminal and the server on the other terminal)
-
-In the first terminal
-- cd client and create a .env file in the root of your client directory.
-- Supply the following credentials
+In the .env Supply and change the following credentials
 
 ```
-REACT_APP_GOOGLE_CLIENT_ID = 
-REACT_APP_API = http://localhost:5000
-REACT_APP_URL = http://localhost:3000
+NODE_ENV = production
+DOMAIN=
+MONGO_URI= 
+MAILGUN_API_KEY=
+MAILGUN_DOMAIN=
 ```
 
-To get your Google ClientID for authentication, go to the [credential Page ](https://console.cloud.google.com/apis/credentials) (if you are new, then [create a new project first](https://console.cloud.google.com/projectcreate) and follow the following steps;
+- Change the NODE_ENV to production
+- Provide Your Domain Name
+- Please follow [This tutorial](https://dev.to/dalalrohit/how-to-connect-to-mongodb-atlas-using-node-js-k9i) to create your mongoDB connection url, which you'll use as your `MONGO_URI`
+- Remember to change your domain and redirect URL so that Google identifies the origin domain to which it can display the consent screen
+- I am using mailgun to send outgoing emails through SMTP on the server. You can read more about it on [Mailgun ](https://support.cloudways.com/en/articles/5131015-how-to-configure-mailgun-smtp)
 
-- Click Create credentials > OAuth client ID.
-- Select the Web application type.
-- Name your OAuth client and click Create
-- Remember to provide your domain and redirect URL so that Google identifies the origin domain to which it can display the consent screen. In development, that is going to be `http://localhost:3000` and `http://localhost:3000/login`
-- Copy the Client ID and assign it to the variable `REACT_APP_GOOGLE_CLIENT_ID` in your .env file
 
-```
-$ cd client
-$ npm install (to install client-side dependencies)
-$ npm start (to start the client)
-```
-In the second terminal
-- cd server and create a .env file in the root of your server directory.
-- Supply the following credentials
 
-```
-DB_URL = 
-PORT = 5000
-SECRET = 
-SMTP_HOST = 
-SMTP_PORT = 
-SMTP_USER = 
-SMTP_PASS = 
 
-```
-
-Please follow [This tutorial](https://dev.to/dalalrohit/how-to-connect-to-mongodb-atlas-using-node-js-k9i) to create your mongoDB connection url, which you'll use as your DB_URL
-
-```
-$ cd server
-$ npm install (to install server-side dependencies)
-& npm start (to start the server)
-```
-
-## Troubleshooting
-If you're getting error while trying to send or download PDF,
-please run the following in your server terminal.
-
-```
-$ npm install html-pdf -g
-$ npm link html-pdf
-$ npm link phantomjs-prebuilt
-```
-
-## Docker
-
-Using docker is simple. Just add the .env contextualized with the docker network.
-
-e.g:
-
-> goes to path "server/.env"
-```
-DB_URL = mongodb://mongo:27017/arch
-PORT = 5000
-SECRET = 
-SMTP_HOST = 
-SMTP_PORT = 
-SMTP_USER = 
-SMTP_PASS = 
-```
-> goes to path "client/.env"
-```
-REACT_APP_GOOGLE_CLIENT_ID = 
-REACT_APP_API = http://localhost:5000
-REACT_APP_URL = http://localhost
-```
-
-And run
-
-```
-docker-compose -f docker-compose.prod.yml build
-
-And then
-
-docker-compose -f docker-compose.prod.yml up
-```
 
 ## Author
 
