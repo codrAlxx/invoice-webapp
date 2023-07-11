@@ -117,43 +117,17 @@ To get your Cloudinary and cloud name `CLOUDINARY_CLOUD_NAME` and credentials fo
 #### Mailhog
 To Test emails in a local development environment i have utilized mailhog. To see all the mails go to port 8025 on localhost.
 
-#### Running Locally
+### Running Locally
 After setting up all your envoirnment variables and credentials. To spin up all the containers you can use the make commands or manually type your command in the terminal. The following commands have been added.
 
-````
-build:
-	docker compose -f local.yml up --build -d --remove-orphans
-
-up:
-	docker compose -f local.yml up -d
-
-down:
-	docker compose -f local.yml down
-
-down-v:
-	docker compose -f local.yml down -v
-
-show-logs:
-	docker compose -f local.yml logs
-
-show-logs-api:
-	docker compose -f local.yml logs api
-
-show-logs-client:
-	docker compose -f local.yml logs client
-
-user:
-	docker run --rm mern-invoice-api whoami
-
-volume:
-	docker volume inspect mern-invoice_mongodb-data
-
-````
+_Horizontal line :_
+- - - -
 
 
 
 
-### Production Setup
+
+## Production Setup
 In order to run this project locally, simply fork and clone the repository or download as zip and unzip on your machine. 
 - Open the project in your prefered code editor.
 - Go to terminal -> New terminal (If you are using VS code)
