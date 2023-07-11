@@ -159,6 +159,6 @@ to keep improving the project.
 
 ## Author
 
-- Github: [@panshak](https://github.com/codrAlxx)
-- Linkedin: [@panshak](https://www.linkedin.com/in/thealokjha/)
-- Email: [@ipanshak](mailto:alok04jhak@gmail.com)
+- Github: [@codrAlxx](https://github.com/codrAlxx)
+- Linkedin: [@thealokjha](https://www.linkedin.com/in/thealokjha/)
+- Email: [@email](mailto:alok04jhak@gmail.com)
