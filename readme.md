@@ -120,6 +120,7 @@ To Test emails in a local development environment i have utilized mailhog. To se
 
 ### NGINX REVERSE PROXY
 
+
 ### DOCKER
 Using docker is simple. Just use the following MAKE commands.
 After setting up all your envoirnment variables and credentials. To spin up all the containers you can use the make commands or manually type your command in the terminal. The following commands have been added.
@@ -188,7 +189,7 @@ MAILGUN_DOMAIN=
 - I am using mailgun to send outgoing emails through SMTP on the server. You can read more about it on [Mailgun ](https://support.cloudways.com/en/articles/5131015-how-to-configure-mailgun-smtp)
 
 
-
+In production I'm Using NGINX Proxy Manager to handle reverse proxies and also provide SSL certificate. You can use `proxy.yml` file to set up your nginx docker container and i used Portainer to manage these containers. Also i have provided the bash script file `digital_ocean_server_deploy.sh` which exports the latest version of mater branch to a `project.tar` file and uploads the project.tar file to server and cleans up /app directory. Further it rebuilds the docker image by running `production.yaml` file.
 
 
 ## Author
