@@ -125,9 +125,44 @@ After setting up all your envoirnment variables and credentials. To spin up all 
 - - - -
 _To Build all the containers and remove containers which were created in a previous run :_
 ```javascript
-   MAKE BUILD
+   make build
 ```
-
+- - - -
+_To start and run the entire app:_
+```javascript
+   make up
+```
+- - - -
+_To stop all the containers and remove them:_
+```javascript
+   make down
+```
+- - - -
+_To show logs of all the containers:_
+```javascript
+   make show-logs
+```
+- - - -
+_To show logs of all the client side:_
+```javascript
+   make show-logs-client
+```
+- - - -
+_To show logs of all the server side:_
+```javascript
+   make show-logs-api
+```
+- - - -
+_To show all the created volumes:_
+```javascript
+   make  volume
+```
+- - - -
+_To echo the current user:_
+```javascript
+   make  user
+```
+- - - -
 
 
 
