@@ -93,16 +93,25 @@ CLOUDINARY_API_KEY=
 CLOUDINARY_API_SECRET=
 ```
 
+
+#### GOOGLE AUTH
 To get your Google ClientID for authentication, go to the [credential Page ](https://console.cloud.google.com/apis/credentials) (if you are new, then [create a new project first](https://console.cloud.google.com/projectcreate) and follow the following steps;
 
 - Click Create credentials > OAuth client ID.
 - Select the Web application type.
 - Name your OAuth client and click Create
-- Remember to provide your domain and redirect URL so that Google identifies the origin domain to which it can display the consent screen. In development, that is going to be `http://localhost:8080` and `http://localhost:8080/api/v1/auth/google/redirect`
+- Remember to provide your domain and redirect URL so that Google identifies the origin domain to which it can display the consent screen.
+- In development, that is going to be `http://localhost:8080` and `http://localhost:8080/api/v1/auth/google/redirect`
 - Copy the Client ID and assign it to the variable `GOOGLE_CLIENT_ID` and client secret `GOOGLE_CLIENT_SECRET` in your .env file
 
-We are going to be using Mongo Express in production. is an interactive lightweight Web-Based Administrative Tool to effectively manage MongoDB Databases. So we need to Provide credentials for `MONGO_ROOT_USERNAME` and `MONGO_ROOT_PASSWORD`. We are going to use these credentials to access our databse running on docker container on port 
+#### MONGODB
+We are going to be using Mongo Express in production. is an interactive lightweight Web-Based Administrative Tool to effectively manage MongoDB Databases.
+- The databse is running on port `8081`.
+- We need to Provide credentials for the root user `MONGO_ROOT_USERNAME` and `MONGO_ROOT_PASSWORD` in .env file which will be used as `ME_CONFIG_MONGODB_ADMINUSERNAME` and  `ME_CONFIG_MONGODB_ADMINPASSWORD` yml file.
+- For logging in as user the default Username `ME_CONFIG_BASICAUTH_USERNAME` is `admin` and password `ME_CONFIG_BASICAUTH_PASSWORD` is `admin123456`.
+- You can change the basic user credentials in local.yml file of the root directory.
 
+#### CLOUDINARY
 To get your Google ClientID for authentication, go to the [credential Page ](https://console.cloud.google.com/apis/credentials) (if you are new, then [create a new project first](https://console.cloud.google.com/projectcreate) and follow the following steps;
 
 
