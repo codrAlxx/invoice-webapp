@@ -95,7 +95,7 @@ CLOUDINARY_API_SECRET=
 ```
 
 
-#### GOOGLE AUTH
+#### Google Auth
 To get your Google ClientID for authentication, go to the [credential Page ](https://console.cloud.google.com/apis/credentials) (if you are new, then [create a new project first](https://console.cloud.google.com/projectcreate) and follow the following steps;
 
 - Click Create credentials > OAuth client ID.
@@ -105,14 +105,14 @@ To get your Google ClientID for authentication, go to the [credential Page ](htt
 - In development, that is going to be `http://localhost:8080` and `http://localhost:8080/api/v1/auth/google/redirect`
 - Copy the Client ID and assign it to the variable `GOOGLE_CLIENT_ID` and client secret `GOOGLE_CLIENT_SECRET` in your .env file
 
-#### MONGODB
+#### MongoDB
 We are going to be using Mongo Express in production. is an interactive lightweight Web-Based Administrative Tool to effectively manage MongoDB Databases.
 - The databse is running on port `8081`.
 - We need to Provide credentials for the root user `MONGO_ROOT_USERNAME` and `MONGO_ROOT_PASSWORD` in .env file which will be used as `ME_CONFIG_MONGODB_ADMINUSERNAME` and  `ME_CONFIG_MONGODB_ADMINPASSWORD` yml file.
 - For logging in as user the default Username `ME_CONFIG_BASICAUTH_USERNAME` is `admin` and password `ME_CONFIG_BASICAUTH_PASSWORD` is `admin123456`.
 - You can change the basic user credentials in local.yml file of the root directory.
 
-#### CLOUDINARY
+#### Cloudinary
 To get your Cloudinary and cloud name `CLOUDINARY_CLOUD_NAME` and credentials for it go to [Cloudinary](https://cloudinary.com/) and register for a free account. For further information on how to get your API keys go to the [credential Page ](https://cloudinary.com/documentation/cloudinary_credentials_tutorial). You can further use AWS S3 Bucket or any other service as per your choice.
 
 #### Mailhog
