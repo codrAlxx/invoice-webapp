@@ -112,7 +112,44 @@ We are going to be using Mongo Express in production. is an interactive lightwei
 - You can change the basic user credentials in local.yml file of the root directory.
 
 #### CLOUDINARY
-To get your Cloudinary and cloud name `CLOUDINARY_CLOUD_NAME` and credentials for it go to [Cloudinary](https://cloudinary.com/) and register for a free account. For further information on how to get your API keys go to the [credential Page ](https://cloudinary.com/documentation/cloudinary_credentials_tutorial).
+To get your Cloudinary and cloud name `CLOUDINARY_CLOUD_NAME` and credentials for it go to [Cloudinary](https://cloudinary.com/) and register for a free account. For further information on how to get your API keys go to the [credential Page ](https://cloudinary.com/documentation/cloudinary_credentials_tutorial). You can further use AWS S3 Bucket or any other service as per your choice.
+
+#### Mailhog
+To Test emails in a local development environment i have utilized mailhog. To see all the mails go to port 8025 on localhost.
+
+#### Running Locally
+After setting up all your envoirnment variables and credentials. To spin up all the containers you can use the make commands or manually type your command in the terminal. The following commands have been added.
+
+````
+build:
+	docker compose -f local.yml up --build -d --remove-orphans
+
+up:
+	docker compose -f local.yml up -d
+
+down:
+	docker compose -f local.yml down
+
+down-v:
+	docker compose -f local.yml down -v
+
+show-logs:
+	docker compose -f local.yml logs
+
+show-logs-api:
+	docker compose -f local.yml logs api
+
+show-logs-client:
+	docker compose -f local.yml logs client
+
+user:
+	docker run --rm mern-invoice-api whoami
+
+volume:
+	docker volume inspect mern-invoice_mongodb-data
+
+````
+
 
 
 
