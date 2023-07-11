@@ -26,7 +26,7 @@ This is a side project I've been working on. A full stack invoicing application 
 - Email sending with Mailhog for development and Mailgun for production
 - Multiple user registration alongside Modern Redux with ReduxToolkit and ReduxToolkit Query
 - Payment history section for each invoice with record about payment date, payment method and extra note.
- - Clean admin dashboard for displaying all invoice statistics including total amount received, total pending, recent payments, total invoice paid, total unpaid and partially paid invoices. 
+- Clean admin dashboard for displaying all invoice statistics including total amount received, total pending, recent payments, total invoice paid, total unpaid and partially paid invoices. 
 - Custom Logging in NodeJS with Morgan & Winston and utilized Cloudinary for Image upload
 - Setup NGINX proxy manager and used Portainer to manage containers in a production environment within a Docker Container
 - Served a MERN web app securely using HTTPS and SSL on DigitalOcean Servelet
@@ -69,7 +69,7 @@ In order to run this project locally, simply fork and clone the repository or do
 - Go to terminal -> New terminal (If you are using VS code)
 - create a .env file in the root of your directory.
 - Supply the following credentials
-- 
+
 ```
 PORT=1997 
 NODE_ENV=development
@@ -88,7 +88,7 @@ MONGO_ROOT_USERNAME=
 MONGO_ROOT_PASSWORD=
 
 
-CLOUDINARY_CLOUD_NAME=RESOURCE FOLDER NAME
+CLOUDINARY_CLOUD_NAME=
 CLOUDINARY_API_KEY= 
 CLOUDINARY_API_SECRET=
 ```
@@ -112,7 +112,7 @@ We are going to be using Mongo Express in production. is an interactive lightwei
 - You can change the basic user credentials in local.yml file of the root directory.
 
 #### CLOUDINARY
-To get your Google ClientID for authentication, go to the [credential Page ](https://console.cloud.google.com/apis/credentials) (if you are new, then [create a new project first](https://console.cloud.google.com/projectcreate) and follow the following steps;
+To get your Cloudinary and cloud name `CLOUDINARY_CLOUD_NAME` and credentials for it go to [Cloudinary](https://cloudinary.com/) and register for a free account. For further information on how to get your API keys go to the [credential Page ](https://cloudinary.com/documentation/cloudinary_credentials_tutorial).
 
 
 
