@@ -64,7 +64,7 @@ MongoDB (MongoDB Atlas)
 ## Configuration and Setup
 
 ### Local Setup
-![Docker](https://res.cloudinary.com/dsw2tkyc8/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1689109253/Invoice_it3kdd.jpg?_s=public-apps)
+![Docker](https://res.cloudinary.com/dsw2tkyc8/image/upload/v1689116664/docker_rptcyn.png)
 In order to run this project locally, simply fork and clone the repository or download as zip and unzip on your machine. 
 - Open the project in your prefered code editor.
 - Go to terminal -> New terminal (If you are using VS code)
