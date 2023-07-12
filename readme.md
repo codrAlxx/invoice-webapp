@@ -110,7 +110,7 @@ I am are using Mongo Express in production. is an interactive lightweight Web-Ba
 - The databse is running on port `8081`.
 - We need to Provide credentials for the root user `MONGO_ROOT_USERNAME` and `MONGO_ROOT_PASSWORD` in .env file which will be used as `ME_CONFIG_MONGODB_ADMINUSERNAME` and  `ME_CONFIG_MONGODB_ADMINPASSWORD` yml file.
 - For logging in as user the default Username `ME_CONFIG_BASICAUTH_USERNAME` is `admin` and password `ME_CONFIG_BASICAUTH_PASSWORD` is `admin123456`.
-- You can change the basic user credentials in local.yml file of the root directory.
+- You can change the basic user credentials in `local.yml` file of the root directory.
 
 #### Cloudinary
 To get your Cloudinary and cloud name `CLOUDINARY_CLOUD_NAME` and credentials for it go to [Cloudinary](https://cloudinary.com/) and register for a free account. For further information on how to get your API keys go to the [credential Page ](https://cloudinary.com/documentation/cloudinary_credentials_tutorial). You can further use AWS S3 Bucket or any other service as per your choice.
@@ -119,6 +119,11 @@ To get your Cloudinary and cloud name `CLOUDINARY_CLOUD_NAME` and credentials fo
 To Test emails in a local development environment i have utilized mailhog. To see all the mails go to port 8025 on localhost.
 
 ### NGINX REVERSE PROXY
+We have the express backend Running on port 1997 and frontend running on port 3000. For Development as well as production we want the backend and frontend to communicate on a single port. Our Nginx Reverse Proxy runs on port 80 and servers our website on port 8080. Now when a browser make a request it is not directly sent to the application rather sent to the Nginx server and it forwards the request to the application. 
+This is also basically the same that will run on the servers.
+
+Locally, all that we need is essentially the following `nginx.conf ` to serve the static assets from our front end project directory and proxy /api/v1/ requests over to the Node.js apps
+
 
 
 ### DOCKER
