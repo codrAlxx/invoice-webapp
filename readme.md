@@ -2,8 +2,8 @@
 
 A web application to generate and send/download invoices, receipts,
 estimates, quotations and bills via email
+[![YouTube Video](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=Irx9HKLQPkE)
 ----
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Irx9HKLQPkE?si=f1pCbCnqerG97saK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
   * [Introduction](#introduction)
   * [Key Features](#key-features)
@@ -15,12 +15,12 @@ estimates, quotations and bills via email
   * [Troubleshooting](#troubleshooting)
   * [Author](#author)
 
-![Invoice Dashboard](https://res.cloudinary.com/dsw2tkyc8/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1689109253/Invoice_it3kdd.jpg?_s=public-apps)
 
 ## Introduction
 This is a side project I've been working on. A full stack invoicing application made using the MERN stack (MongoDB, Express, React & Nodejs), specially designed for freelancers and small businesses, but can be used for almost any type of business need. With this application, you can send beautiful invoices, receipts, estimates, quotes, bills etc to your clients. Jump right off the [Live App](https://invoice.alokjha.live/) and start sending invoice or download the entire [Source code](https://github.com/codrAlxx/invoice-webapp) and run it on your server. This project is something I've been working on in my free time so I cannot be sure that everything will work out correctly. But I'll appreciate you if can report any issue.
 
 
+![Invoice Dashboard](https://res.cloudinary.com/dsw2tkyc8/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1689109253/Invoice_it3kdd.jpg?_s=public-apps)
 ## Key Features
 - Send invoices, receipts, estimates, quotations and bills via email
 - Generate and send/download pdf invoices, receipts, estimates, quotations and bills via email
