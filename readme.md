@@ -16,7 +16,7 @@ estimates, quotations and bills via email
   * [Troubleshooting](#troubleshooting)
   * [Author](#author)
 
-[![YouTube Video]([<img width="1051" alt="InvoiceFront" src="https://github.com/codrAlxx/invoice-webapp/assets/56028723/1975a401-4f4e-44d0-8ca4-da2475ac6c2f">](https://asset.cloudinary.com/dsw2tkyc8/4ffd9ae471cc4d0fdf1d624825f1b454))](https://www.youtube.com/watch?v=Irx9HKLQPkE)
+[![YouTube Video]([https://res.cloudinary.com/dsw2tkyc8/image/upload/v1695206299/InvoiceFront_fyzkia.png](https://www.youtube.com/watch?v=Irx9HKLQPkE)
 ## Introduction
 This is a side project I've been working on. A full stack invoicing application made using the MERN stack (MongoDB, Express, React & Nodejs), specially designed for freelancers and small businesses, but can be used for almost any type of business need. With this application, you can send beautiful invoices, receipts, estimates, quotes, bills etc to your clients. Jump right off the [Live App](https://invoice.alokjha.live/) and start sending invoice or download the entire [Source code](https://github.com/codrAlxx/invoice-webapp) and run it on your server. This project is something I've been working on in my free time so I cannot be sure that everything will work out correctly. But I'll appreciate you if can report any issue.
 
