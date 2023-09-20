@@ -3,7 +3,7 @@
 A web application to generate and send/download invoices, receipts,
 estimates, quotations and bills via email
 ----
-[![YouTube Video](https://res.cloudinary.com/dsw2tkyc8/image/upload/v1695206299/InvoiceFront_fyzkia.png)](https://www.youtube.com/watch?v=Irx9HKLQPkE")
+[![YouTube Video](https://res.cloudinary.com/dsw2tkyc8/image/upload/v1695206959/RTSFront_ryqqjh.png)](https://www.youtube.com/watch?v=Irx9HKLQPkE")
 
 
   * [Introduction](#introduction)
