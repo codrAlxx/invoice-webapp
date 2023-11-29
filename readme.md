@@ -1,4 +1,4 @@
-# Invoice Web Application
+# BillBlitz
 
 A web application to generate and send/download invoices, receipts,
 estimates, quotations and bills via email
